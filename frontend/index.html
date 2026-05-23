@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta Nutricional y Visual</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-container">
+      <div class="brand-gob">
+        <div class="emblem">●</div>
+        <div>
+          <span class="brand-small">Gobierno de</span>
+          <strong>México</strong>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a href="#">Trámites</a>
+        <a href="#">Gobierno</a>
+        <a href="#" aria-label="Buscar">🔍</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="second-bar"></div>
+
+  <main class="main-content">
+    <section class="title-row">
+      <div>
+        <h1>Consulta Nutricional y Visual</h1>
+        <div class="gold-line"></div>
+      </div>
+      <div class="logo-salud">
+        <span>Sistema</span>
+        <strong>Salud Infantil</strong>
+        <em>Evaluación integral</em>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <div class="tab-title">Datos del Estudiante</div>
+
+      <form id="formSalud">
+        <div class="form-grid">
+          <div class="field">
+            <label for="edad">Edad*</label>
+            <input type="number" id="edad" placeholder="Ej. 9" required />
+          </div>
+
+          <div class="field">
+            <label for="grado">Grado*</label>
+            <select id="grado" required>
+              <option value="">Selecciona el grado</option>
+              <option value="1">1°</option>
+              <option value="2">2°</option>
+              <option value="3">3°</option>
+              <option value="4">4°</option>
+              <option value="5">5°</option>
+              <option value="6">6°</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="peso">Peso (kg)*</label>
+            <input type="number" id="peso" step="0.01" placeholder="Ej. 32" required />
+          </div>
+
+          <div class="field">
+            <label for="talla">Talla (cm)*</label>
+            <input type="number" id="talla" step="0.01" placeholder="Ej. 135" required />
+          </div>
+
+          <div class="field">
+            <label for="sexo">Sexo*</label>
+            <select id="sexo" required>
+              <option value="">Selecciona el sexo</option>
+              <option value="0">Femenino</option>
+              <option value="1">Masculino</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="usa_lentes">Usa lentes*</label>
+            <select id="usa_lentes" required>
+              <option value="">Selecciona una opción</option>
+              <option value="0">No</option>
+              <option value="1">Sí</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="ojo_izquierdo">Ojo izquierdo*</label>
+            <input type="number" id="ojo_izquierdo" step="0.01" placeholder="Ej. 9" required />
+          </div>
+
+          <div class="field">
+            <label for="ojo_derecho">Ojo derecho*</label>
+            <input type="number" id="ojo_derecho" step="0.01" placeholder="Ej. 9" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">🔍 Aceptar</button>
+      </form>
+    </section>
+
+    <section class="result-box" id="resultadoApi">
+      <strong>Respuesta de la API:</strong>
+      <p>Completa el formulario y presiona <b>Aceptar</b> para visualizar la evaluación nutricional, visual y general.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-gob footer-logo">
+          <div class="emblem">●</div>
+          <div>
+            <span class="brand-small">Gobierno de</span>
+            <strong>México</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Enlaces</h3>
+        <a href="#">Evaluación nutricional</a>
+        <a href="#">Evaluación visual</a>
+        <a href="#">Reporte integral</a>
+        <a href="#">Historial</a>
+      </div>
+
+      <div>
+        <h3>¿Qué es este sistema?</h3>
+        <p>Herramienta de apoyo para la detección temprana de posibles riesgos nutricionales y visuales en población infantil.</p>
+      </div>
+
+      <div>
+        <h3>Seguimiento</h3>
+        <p>Consulta los resultados generados por el modelo predictivo.</p>
+        <p class="phone">079</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

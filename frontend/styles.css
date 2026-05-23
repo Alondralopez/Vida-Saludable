@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+.top-header {
+  background: #6f1235;
+  height: 70px;
+  color: #fff;
+}
+
+.header-container {
+  width: 86%;
+  max-width: 1100px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-gob {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #d6b36a;
+  color: #d6b36a;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+.brand-small {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.brand-gob strong {
+  font-size: 25px;
+  line-height: 24px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 26px;
+  font-size: 14px;
+}
+
+.second-bar {
+  height: 46px;
+  background: #3b071d;
+}
+
+.main-content {
+  width: 96%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 30px 0 25px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 22px;
+  margin-bottom: 30px;
+}
+
+.title-row h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 58px;
+  color: #3c3c3c;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.gold-line {
+  width: 38px;
+  height: 5px;
+  background: #c6a15b;
+  margin-top: 35px;
+}
+
+.logo-salud {
+  text-align: center;
+  color: #14614e;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.logo-salud span {
+  display: block;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.logo-salud strong {
+  display: block;
+  font-size: 48px;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.logo-salud em {
+  display: block;
+  color: #a51850;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.form-card {
+  position: relative;
+  width: 58%;
+  min-width: 680px;
+  margin: 0 auto 30px;
+  border: 1px solid #eee;
+  padding: 46px 24px 35px;
+  background: #fff;
+}
+
+.tab-title {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6f1235;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 28px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  padding: 0 13px;
+  font-size: 17px;
+  color: #555;
+  background: #fff;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #4aa3df;
+  box-shadow: 0 0 5px rgba(47, 145, 220, .6);
+}
+
+.btn-submit {
+  display: block;
+  margin: 32px auto -8px;
+  padding: 12px 32px;
+  background: white;
+  border: 2px solid #6f1235;
+  color: #8a2950;
+  font-size: 17px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #6f1235;
+  color: white;
+}
+
+.result-box {
+  width: 80%;
+  max-width: 980px;
+  margin: 25px auto;
+  background: #d8f0fa;
+  border: 1px solid #b6ddec;
+  color: #2b6f8a;
+  padding: 22px 30px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.result-card {
+  background: rgba(255,255,255,.65);
+  border: 1px solid #b7d9e6;
+  padding: 14px;
+  border-radius: 5px;
+}
+
+.result-card h4 {
+  color: #6f1235;
+  margin-bottom: 8px;
+}
+
+.footer {
+  background: #6f1235;
+  color: #fff;
+  margin-top: 24px;
+}
+
+.footer-container {
+  width: 80%;
+  max-width: 980px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr 1.3fr 1.1fr;
+  gap: 35px;
+  padding: 25px 0 35px;
+}
+
+.footer h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.footer a,
+.footer p {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.phone {
+  font-size: 32px !important;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .title-row,
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-row h1 {
+    font-size: 40px;
+  }
+
+  .form-card {
+    width: 95%;
+    min-width: unset;
+  }
+
+  .form-grid,
+  .result-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
