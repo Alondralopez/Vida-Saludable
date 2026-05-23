@@ -9,25 +9,32 @@ function calcularIMC(peso, tallaCm) {
 }
 
 function mostrarResultado(data) {
+  const riesgoNutricional = data.evaluacion_nutricional?.riesgo ?? 'No disponible';
+  const probNutricional = data.evaluacion_nutricional?.probabilidad ?? 'No disponible';
+
+  const riesgoVisual = data.evaluacion_visual?.riesgo ?? 'No disponible';
+  const probVisual = data.evaluacion_visual?.probabilidad ?? 'No disponible';
+
+  const conclusion = data.resultado_general?.conclusion ?? 'No disponible';
+
   resultado.innerHTML = `
     <strong>Respuesta de la API:</strong>
     <div class="result-grid">
       <div class="result-card">
         <h4>Evaluación nutricional</h4>
-        <p><b>Riesgo:</b> ${data.riesgo_nutricional ? 'Sí' : 'No'}</p>
-        <p><b>Probabilidad:</b> ${data.probabilidad_nutricional}%</p>
+        <p><b>Riesgo:</b> ${riesgoNutricional}</p>
+        <p><b>Probabilidad:</b> ${probNutricional}%</p>
       </div>
 
       <div class="result-card">
         <h4>Evaluación visual</h4>
-        <p><b>Riesgo:</b> ${data.riesgo_visual ? 'Sí' : 'No'}</p>
-        <p><b>Probabilidad:</b> ${data.probabilidad_visual}%</p>
+        <p><b>Riesgo:</b> ${riesgoVisual}</p>
+        <p><b>Probabilidad:</b> ${probVisual}%</p>
       </div>
 
       <div class="result-card">
         <h4>Conclusión general</h4>
-        <p><b>${data.riesgo_general}</b></p>
-        <p>${data.mensaje}</p>
+        <p><b>${conclusion}</b></p>
       </div>
     </div>
   `;
@@ -97,12 +104,17 @@ form.addEventListener('submit', async (event) => {
     }
 
     mostrarResultado({
-      riesgo_nutricional: riesgoNutricional,
-      probabilidad_nutricional: riesgoNutricional ? 95.4 : 18.2,
-      riesgo_visual: riesgoVisual,
-      probabilidad_visual: riesgoVisual ? 93.8 : 13.5,
-      riesgo_general: riesgoGeneral,
-      mensaje
+      evaluacion_nutricional: {
+        riesgo: riesgoNutricional ? 'Sí' : 'No',
+        probabilidad: riesgoNutricional ? 95.4 : 18.2
+      },
+      evaluacion_visual: {
+        riesgo: riesgoVisual ? 'Sí' : 'No',
+        probabilidad: riesgoVisual ? 93.8 : 13.5
+      },
+      resultado_general: {
+        conclusion: `${riesgoGeneral} - ${mensaje}`
+      }
     });
   }
 });
