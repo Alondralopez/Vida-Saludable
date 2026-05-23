@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Consulta Nutricional y Visual</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,16 +11,15 @@
   <header class="top-header">
     <div class="header-container">
       <div class="brand-gob">
-        <div class="emblem">●</div>
-        <div>
-          <span class="brand-small">Gobierno de</span>
-          <strong>México</strong>
-        </div>
+       <img src="images/logo_gob_mx.png" alt="Logo Gobierno de México" class="header-logo" />
       </div>
       <nav class="top-nav">
         <a href="#">Trámites</a>
         <a href="#">Gobierno</a>
-        <a href="#" aria-label="Buscar">🔍</a>
+        <a href="#" class="search-icon" aria-label="Buscar">
+            <i class="fas fa-search"></i>
+        </a>
+      </nav>
       </nav>
     </div>
   </header>
@@ -33,9 +33,7 @@
         <div class="gold-line"></div>
       </div>
       <div class="logo-salud">
-        <span>Sistema</span>
-        <strong>Salud Infantil</strong>
-        <em>Evaluación integral</em>
+        <img src="images/logo vida saludable-01.webp" alt="Logo Gobierno de México" class="salud-logo"/>
       </div>
     </section>
 
@@ -101,7 +99,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-submit">🔍 Aceptar</button>
+        <button type="submit" class="btn-submit">Aceptar</button>
       </form>
     </section>
 
@@ -115,20 +113,20 @@
     <div class="footer-container">
       <div class="footer-brand">
         <div class="brand-gob footer-logo">
-          <div class="emblem">●</div>
+          
           <div>
-            <span class="brand-small">Gobierno de</span>
-            <strong>México</strong>
+              <img src="images/logo_gob_mx.png" alt="Logo Gobierno de México" class="footer-logo" />
           </div>
         </div>
       </div>
 
       <div>
         <h3>Enlaces</h3>
-        <a href="#">Evaluación nutricional</a>
-        <a href="#">Evaluación visual</a>
-        <a href="#">Reporte integral</a>
-        <a href="#">Historial</a>
+        <a href="https://data.buengobierno.gob.mx/databuengobierno">Datos abiertos de la SABG</a>
+        <a href="http://www.ordenjuridico.gob.mx/">Marco Jurídico</a>
+        <a href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio">Plataforma Nacional de Transparencia</a>
+        <a href="https://transparencia.gob.mx/home.html">Transparencia para el pueblo</a>
+        <a href="https://alertadores.buengobierno.gob.mx/">Alerta</a>
       </div>
 
       <div>
@@ -139,7 +137,8 @@
       <div>
         <h3>Seguimiento</h3>
         <p>Consulta los resultados generados por el modelo predictivo.</p>
-        <p class="phone">079</p>
+        <img src="images/079.png" alt="Tel" class="footer-tel" />
+          
       </div>
     </div>
   </footer>

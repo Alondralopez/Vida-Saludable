@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000/api/predict';
+const API_URL = 'https://vida-saludable-api.onrender.com/api/predict';
 
 const form = document.getElementById('formSalud');
 const resultado = document.getElementById('resultadoApi');

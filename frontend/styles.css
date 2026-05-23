@@ -93,10 +93,10 @@ body {
 }
 
 .gold-line {
-  width: 38px;
+  width: 850px;
   height: 5px;
   background: #c6a15b;
-  margin-top: 35px;
+  margin-top: 10px;
 }
 
 .logo-salud {
@@ -134,6 +134,7 @@ body {
   border: 1px solid #eee;
   padding: 46px 24px 35px;
   background: #fff;
+  margin: 80px auto 30px;
 }
 
 .tab-title {
@@ -290,4 +291,47 @@ body {
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+/* ===== LOGO HEADER ===== */
+.header-logo {
+  width: 150px;      /* Ajusta el ancho */
+  height: auto;      /* Mantiene proporción */
+  display: block;
+}
+
+/* ===== LOGO VIDA SALUDABLE ===== */
+.logo-salud {
+  width: 250px;
+  overflow: visible;
+}
+
+.salud-logo {
+  width: 100%;
+  height: auto;
+  transform: scale(1.5);
+  transform-origin: center center;
+}
+
+/* ===== LOGO FOOTER ===== */
+.footer-logo {
+  width: 180px;      /* Ajusta el ancho */
+  height: auto;
+  display: block;
+}
+.search-icon {
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.search-icon:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.footer-tel{
+  width: 250px;      /* Ajusta el ancho */
+  height: auto;
+  display: block;
 }
