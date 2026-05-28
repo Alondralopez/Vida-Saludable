@@ -234,4 +234,4 @@ def predict(datos: SaludInput):
 def predict_alt(datos: SaludInput):
 
     return predict(datos)
-```
+
