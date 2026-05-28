@@ -9,33 +9,38 @@ function calcularIMC(peso, tallaCm) {
 }
 
 function mostrarResultado(data) {
-  const riesgoNutricional = data.evaluacion_nutricional?.riesgo ?? 'No disponible';
-  const probNutricional = data.evaluacion_nutricional?.probabilidad ?? 'No disponible';
+  const imc = data.variables_calculadas?.imc ?? 'No disponible';
+  const visionPromedio = data.variables_calculadas?.vision_promedio ?? 'No disponible';
+  const diferenciaVisual = data.variables_calculadas?.diferencia_visual ?? 'No disponible';
 
-  const riesgoVisual = data.evaluacion_visual?.riesgo ?? 'No disponible';
-  const probVisual = data.evaluacion_visual?.probabilidad ?? 'No disponible';
-
-  const conclusion = data.resultado_general?.conclusion ?? 'No disponible';
+  const clase = data.resultado_modelo?.clase ?? 'No disponible';
+  const nivelRiesgo = data.resultado_modelo?.nivel_riesgo ?? 'No disponible';
+  const probabilidad = data.resultado_modelo?.probabilidad ?? 'No disponible';
 
   resultado.innerHTML = `
     <strong>Respuesta de la API:</strong>
+
     <div class="result-grid">
+
       <div class="result-card">
-        <h4>Evaluación nutricional</h4>
-        <p><b>Riesgo:</b> ${riesgoNutricional}</p>
-        <p><b>Probabilidad:</b> ${probNutricional}%</p>
+        <h4>Variables calculadas</h4>
+        <p><b>IMC:</b> ${imc}</p>
+        <p><b>Visión promedio:</b> ${visionPromedio}</p>
+        <p><b>Diferencia visual:</b> ${diferenciaVisual}</p>
       </div>
 
       <div class="result-card">
-        <h4>Evaluación visual</h4>
-        <p><b>Riesgo:</b> ${riesgoVisual}</p>
-        <p><b>Probabilidad:</b> ${probVisual}%</p>
+        <h4>Clasificación del modelo</h4>
+        <p><b>Clase:</b> ${clase}</p>
+        <p><b>Nivel de riesgo:</b> ${nivelRiesgo}</p>
+        <p><b>Probabilidad:</b> ${probabilidad}%</p>
       </div>
 
       <div class="result-card">
         <h4>Conclusión general</h4>
-        <p><b>${conclusion}</b></p>
+        <p><b>${nivelRiesgo}</b></p>
       </div>
+
     </div>
   `;
 }
@@ -64,10 +69,7 @@ form.addEventListener('submit', async (event) => {
     sexo,
     usa_lentes,
     ojo_izquierdo,
-    ojo_derecho,
-    imc,
-    vision_promedio,
-    diferencia_visual
+    ojo_derecho
   };
 
   resultado.innerHTML = '<strong>Consultando API...</strong><p>Espere un momento.</p>';
@@ -87,34 +89,14 @@ form.addEventListener('submit', async (event) => {
 
     const data = await response.json();
     mostrarResultado(data);
+
   } catch (error) {
-    // Respuesta simulada para que puedas ver el frontend aunque todavía no tengas lista la API.
-    const riesgoNutricional = imc < 14 || imc > 20;
-    const riesgoVisual = vision_promedio < 6 || diferencia_visual >= 2;
+    console.error(error);
 
-    let riesgoGeneral = 'Riesgo bajo';
-    let mensaje = 'Sin alerta principal';
-
-    if (riesgoNutricional && riesgoVisual) {
-      riesgoGeneral = 'Riesgo alto';
-      mensaje = 'Requiere atención prioritaria';
-    } else if (riesgoNutricional || riesgoVisual) {
-      riesgoGeneral = 'Riesgo medio';
-      mensaje = 'Requiere seguimiento preventivo';
-    }
-
-    mostrarResultado({
-      evaluacion_nutricional: {
-        riesgo: riesgoNutricional ? 'Sí' : 'No',
-        probabilidad: riesgoNutricional ? 95.4 : 18.2
-      },
-      evaluacion_visual: {
-        riesgo: riesgoVisual ? 'Sí' : 'No',
-        probabilidad: riesgoVisual ? 93.8 : 13.5
-      },
-      resultado_general: {
-        conclusion: `${riesgoGeneral} - ${mensaje}`
-      }
-    });
+    resultado.innerHTML = `
+      <strong>Error al consultar la API</strong>
+      <p>No se pudo obtener respuesta del servidor.</p>
+      <p>Verifica que la API esté activa en Render y que el endpoint sea correcto.</p>
+    `;
   }
 });
