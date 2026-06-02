@@ -1,5 +1,6 @@
 const API_URL = 'https://vida-saludable-api.onrender.com/api/predict';
 
+
 const form = document.getElementById('formSalud');
 const resultado = document.getElementById('resultadoApi');
 
