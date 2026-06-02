@@ -43,6 +43,7 @@ except Exception as e:
 
 class SaludInput(BaseModel):
     edad: int = Field(..., example=9)
+    grado: int = Field(..., example=2)
     peso: float = Field(..., example=28)
     talla: float = Field(..., example=140)
 
@@ -133,7 +134,8 @@ def predict(datos: SaludInput):
             "ojo derecho": datos.ojo_derecho,
             "vision_promedio": vision_promedio,
             "diferencia_visual": diferencia_visual,
-            "usa lentes": datos.usa_lentes
+            "usa lentes": datos.usa_lentes,
+            "sexo": datos.sexo
         }])
 
         # ====================================================
