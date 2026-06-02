@@ -32,7 +32,7 @@ app.add_middleware(
 # ============================================================
 
 try:
-    modelo_general = joblib.load("model/modelo_general_red_neuronal.pkl")
+    modelo_general = joblib.load("model/modelo_final.pkl")
     print("Modelo MLP cargado correctamente")
 except Exception as e:
     raise RuntimeError(f"Error cargando el modelo: {e}")
@@ -42,25 +42,14 @@ except Exception as e:
 # ============================================================
 
 class SaludInput(BaseModel):
-    edad: int = Field(..., example=9)
-    grado: int = Field(..., example=2)
-    peso: float = Field(..., example=28)
-    talla: float = Field(..., example=140)
-
-    sexo: int = Field(
-        ...,
-        example=1,
-        description="0 = Femenino, 1 = Masculino"
-    )
-
-    usa_lentes: int = Field(
-        ...,
-        example=0,
-        description="0 = No, 1 = Sí"
-    )
-
-    ojo_izquierdo: float = Field(..., example=10)
-    ojo_derecho: float = Field(..., example=10)
+    edad: int
+    grado: int
+    peso: float
+    talla: float
+    sexo: int
+    usa_lentes: int
+    ojo_izquierdo: float
+    ojo_derecho: float
 # ============================================================
 # FUNCIONES AUXILIARES
 # ============================================================
@@ -127,17 +116,17 @@ def predict(datos: SaludInput):
 
         X = pd.DataFrame([{
             "edad": datos.edad,
+            "grado": datos.grado,
             "peso": datos.peso,
             "talla": datos.talla,
+            "sexo": datos.sexo,
             "imc": imc,
             "ojo izquierdo": datos.ojo_izquierdo,
             "ojo derecho": datos.ojo_derecho,
             "vision_promedio": vision_promedio,
             "diferencia_visual": diferencia_visual,
-            "usa lentes": datos.usa_lentes,
-            "sexo": datos.sexo
+            "usa lentes": datos.usa_lentes
         }])
-
         # ====================================================
         # PREDICCIÓN
         # ====================================================
