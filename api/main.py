@@ -43,16 +43,23 @@ except Exception as e:
 
 class SaludInput(BaseModel):
     edad: int = Field(..., example=9)
-    grado: int = Field(..., example=4)
-    peso: float = Field(..., example=32)
-    talla: float = Field(..., example=135)
+    peso: float = Field(..., example=28)
+    talla: float = Field(..., example=140)
 
-    sexo: int = Field(..., example=1, description="0 = Femenino, 1 = Masculino")
-    usa_lentes: int = Field(..., example=0, description="0 = No, 1 = Sí")
+    sexo: int = Field(
+        ...,
+        example=1,
+        description="0 = Femenino, 1 = Masculino"
+    )
 
-    ojo_izquierdo: float = Field(..., example=9)
-    ojo_derecho: float = Field(..., example=9)
+    usa_lentes: int = Field(
+        ...,
+        example=0,
+        description="0 = No, 1 = Sí"
+    )
 
+    ojo_izquierdo: float = Field(..., example=10)
+    ojo_derecho: float = Field(..., example=10)
 # ============================================================
 # FUNCIONES AUXILIARES
 # ============================================================
