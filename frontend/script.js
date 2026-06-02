@@ -106,6 +106,7 @@ form.addEventListener('submit', async (event) => {
 
   const payload = {
     edad,
+    grado,
     peso,
     talla,
     sexo,
