@@ -32,7 +32,7 @@ app.add_middleware(
 # ============================================================
 
 try:
-    modelo_general = joblib.load("model/modelo_general_red_neuronal_mejorado.pkl")
+    modelo_general = joblib.load("model/modelo_general_red_neuronal.pkl")
     print("Modelo MLP cargado correctamente")
 except Exception as e:
     raise RuntimeError(f"Error cargando el modelo: {e}")
